@@ -1,36 +1,42 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bienvenidos a NovaPrint.LA</title>
-<style>
-body, html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  font-family: Arial, sans-serif;
-}
-
-iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-  margin: 0;
-  padding: 0;
-  display: block;
-}
-
-@media only screen and (max-width: 600px) {
-  iframe {
-    width: 100vw;
-  }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contenido según dispositivo</title>
+    <style>
+        /* Estilos para dispositivos móviles */
+        @media only screen and (max-width: 600px) {
+            #web-content {
+                display: none; /* Ocultar contenido web en dispositivos móviles */
+            }
+            #mobile-content {
+                width: 100%;
+                height: 100vh;
+            }
+        }
+        
+        /* Estilos para dispositivos web */
+        @media only screen and (min-width: 601px) {
+            #mobile-content {
+                display: none; /* Ocultar contenido móvil en dispositivos web */
+            }
+            #web-content {
+                width: 100%;
+                height: 100vh;
+            }
+        }
+    </style>
 </head>
 <body topmargin="0" leftmargin="0">
-
-<iframe src="https://www.novaprintgroup.com/" frameborder="0"></iframe>
-
+    <!-- Contenido para dispositivos web -->
+    <div id="web-content">
+        <iframe src="https://www.novaprintgroup.com" width="100%" height="100%" frameborder="0" style="border: none;"></iframe>
+    </div>
+    
+    <!-- Contenido para dispositivos móviles -->
+    <div id="mobile-content">
+        <iframe src="https://www.novaprintgroup.com" width="100%" height="100%" frameborder="0" style="border: none;"></iframe>
+    </div>
 </body>
 </html>
